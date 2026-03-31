@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodoro Tương Lai</title>
+    
+    <!-- Lấy bộ Font (kiểu chữ) Inter rất chữ ký và hiện đại từ Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Mốc móc nối với file trang trí CSS tí nữa ta sẽ viết -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ô hình chữ nhật bọc lại toàn bộ tiện ích ở giữa màn hình -->
+    <div class="pomodoro-container">
+        
+        <!-- Khối hiển thị trạng thái "Đang làm" hay "Đang nghỉ" -->
+        <h3 class="mode-text" id="status-text">⚡ THỜI GIAN TẬP TRUNG</h3>
+
+        <!-- Khối bao quanh và hiển thị Đồng Hồ Cỡ Lớn (Cực To) -->
+        <div class="timer-display">
+            <h1 id="time-left">25:00</h1>
+            <div class="circular-glow"></div> <!-- Đèn vòng dạ quang ở phía sau số -->
+        </div>
+
+        <!-- Khu vực đặt các nút ấn -->
+        <div class="controls">
+            <button id="start-btn" class="btn primary-btn">BẮT ĐẦU</button>
+            <button id="reset-btn" class="btn secondary-btn">ĐẶT LẠI</button>
+                    <!-- ... Code mấy cái nút cũ ở trên ... -->
+
+        <!-- ======== THÊM TÍNH NÀY YOUTUBE TỪ ĐÂY ======== -->
+        <div class="youtube-settings">
+            
+            <!-- Ô điền đường link Nhạc Lofi -->
+            <input type="text" id="yt-link" placeholder="Dán link Youtube Lofi vào đây nha (Cứ dán thẳng link dài cũng được)...">
+            
+            <!-- Bộ kéo thả chỉnh tay Âm Lượng (Volume Slider) -->
+            <div class="volume-container">
+                <span>🔈 Âm Lượng Nhạc</span>
+                <!-- min=0 max=100 nghĩa là chỉnh từ mức 0 đến mức 100 y như tivi -->
+                <input type="range" id="yt-volume" min="0" max="100" value="60"> 
+            </div>
+        </div>
+
+        <!-- Căn hầm tàng hình để nhốt video YTB vào đây (Và nó chỉ được thả tiếng loa ra thôi) -->
+        <div id="youtube-player" style="display: none;"></div>
+        <!-- ============================================== -->
+
+    </div> <!-- Đây là thẻ đóng của .pomodoro-container -->
+
+        </div>
+        
+    </div>
+
+    <!-- Mốc móc nối với file Não bộ JavaScript tí nữa ta sẽ viết -->
+    <script src="script.js"></script>
+</body>
+</html>

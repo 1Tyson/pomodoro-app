@@ -1,0 +1,121 @@
+/* --- PHẦN 1: Dọn dẹp lề và chọn Font chữ xịn --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Lấy font xịn của Google để chữ tròn và sắc nét */
+}
+
+/* --- PHẦN 2: Vẽ nền Không Gian (Dark Mode) --- */
+body {
+    /* Trộn màu Gradient mượt từ Đen-Xanh Tím */
+    background: linear-gradient(135deg, #1A1A2E, #16213E, #0F3460);
+    height: 100vh; /* Kéo cao bằng 100% màn hình */
+    display: flex; /* Dùng cơ chế Flexbox đẩy khối App ra ngay tâm ở giữa */
+    justify-content: center;
+    align-items: center;
+    color: white; /* Chữ mặc định là Trắng */
+}
+
+/* --- PHẦN 3: Tạo hiệu ứng Kính Mờ (Glassmorphism) đỉnh cao --- */
+.pomodoro-container {
+    background: rgba(255, 255, 255, 0.05); /* Lớp kính trắng xuyên thấu 5% */
+    backdrop-filter: blur(20px); /* Bắt máy tính làm mờ mịt khung cảnh phía sau kính */
+    padding: 50px 70px; /* Bơm không khí vào trong cho tấm kính căng ra */
+    border-radius: 20px; /* Bo viền cong cong */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Đổ cái bóng màu đen xuống dưới */
+    text-align: center;
+}
+
+/* --- PHẦN 4: Trang trí chữ và đồng hồ --- */
+.mode-text {
+    font-size: 18px;
+    letter-spacing: 3px; /* Ép từng chữ cách xa nhau một chút cho ngầu */
+    color: #E94560; /* Màu dạ quang viền hồng đỏ Neon */
+    margin-bottom: 20px;
+}
+
+#time-left {
+    font-size: 90px; /* Chữ khổng lồ */
+    font-weight: 800; /* Nét Chữ Siêu Đậm */
+    letter-spacing: 4px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Phát vầng sáng tỏa nhẹ */
+    margin-bottom: 40px;
+}
+
+/* --- PHẦN 5: Các nút bấm (Buttons) --- */
+.btn {
+    padding: 15px 35px;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px; /* Bo cong nút thành viên thuốc */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Chuyển màu trơn tru mất 0.3 giây */
+}
+
+/* Nút Bắt Đầu rực rỡ */
+.primary-btn {
+    background: linear-gradient(90deg, #E94560, #E63946); /* Màu Gradient (chuyển) rực lửa */
+    color: white;
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+}
+
+/* Lệnh Hover: Nghĩa là Khi con trỏ chuột luớt lên trên Nút Bắt Đầu thì... */
+.primary-btn:hover {
+    transform: translateY(-3px); /* Nhấc lơ lửng tung lên trên 3 pixel */
+    box-shadow: 0 6px 20px rgba(233, 69, 96, 0.6);
+}
+
+/* Nút Đặt Lại mờ nhạt làm phụ tá */
+.secondary-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+/* ======================================================= */
+/* --- ÁO GIÁP BÀO VỆ CHO TÍNH NĂNG YOUTUBE --- */
+/* ======================================================= */
+
+.youtube-settings {
+    margin-top: 30px; /* Bỏ nó nằm xa cụm nút bấm 30px cho đỡ chật */
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Kẻ 1 đường ranh giới mờ mờ cho sang chảnh */
+    display: flex;
+    flex-direction: column; /* Xếp dọc từ trên xuống */
+    gap: 15px; /* Giữ nếp cách nhau 15px */
+}
+
+/* Biến ô tìm kiếm (Input) thành Kính Đen Mờ */
+#yt-link {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px; /* Bo bo góc */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.25); /* Sơn nền kính đen hơi bóng */
+    color: white; /* Chữ gõ vào màu Trắng */
+    font-size: 14px;
+    outline: none; /* Khử khung viền xanh mặc định của Windows */
+    transition: all 0.3s ease;
+}
+
+/* Mã Lệnh: Khi bạn chọc chuột vào ô Input thì đường viền sẽ rực đỏ Dạ Quang */
+#yt-link:focus {
+    border-color: #E94560; 
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 15px;
+    color: #ccc; /* Icon Loa màu Xám Tro */
+}
+
+/* ------ Tuyệt Chiêu CSS: Tự vẽ lại thanh Volume mới hoàn toàn ------ */
